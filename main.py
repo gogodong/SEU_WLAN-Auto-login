@@ -5,8 +5,9 @@ import subprocess
 from datetime import datetime
 
 # 配置信息
-ID = 'xxx'  # 一卡通号
-PASSWORD = 'xxx'  # 密码
+ID = ''  # 一卡通号
+PASSWORD = ''  # 密码
+ipv4_adr = '' #电脑的ipv4地址
 
 
 def get_client_ip():
@@ -18,7 +19,7 @@ def get_client_ip():
         return data['v46ip']
     except Exception as e:
         log(f"获取IP失败: {str(e)}")
-        return "10.201.32.31"
+        return ipv4_adr
 
 
 def login_seu(ip):
